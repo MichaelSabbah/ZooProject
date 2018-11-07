@@ -22,6 +22,9 @@ public:
 
 	const Animal& operator=(const Animal& other);
 	Animal* operator+(const Animal& other) const;
+	virtual bool operator==(const Animal& other) const;
+	virtual void toOs(ostream& os) const;
+	friend ostream& operator<<(ostream& os, const Animal& animal);
 
 private:
 	string name;

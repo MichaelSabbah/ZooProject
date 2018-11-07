@@ -9,7 +9,7 @@ Manager::Manager(int id, string name, int salary):Worker(id,name,salary)
 {
 }
 
-Manager::Manager(const Manager & other):Worker(other.getId,other.getName,other.getSalary)
+Manager::Manager(const Manager & other):Worker(other.getId(),other.getName(),other.getSalary())
 {
 	this->subordinates.swap(subordinates);
 }
@@ -25,7 +25,7 @@ const Manager & Manager::operator=(const Manager & other)
 
 void Manager::hireNewWorker(const Worker& worker)
 {
-	if (find(subordinates.begin, subordinates.end, worker) != subordinates.end)
+	if (find(subordinates.begin(), subordinates.end(), worker) != subordinates.end())
 		this->subordinates.push_back(worker);
 	else
 		cout << "You already hired this worker.";

@@ -30,13 +30,13 @@ public:
 	void animalsAction() const;
 	void feedByWorkers() const;
 	void feedByVisitors() const;
-	void addAnimal(const Animal& animal);
+	void addAnimal(Animal* animal);
 	void addWorker(const Worker& worker);
 	void addVisitor(const Visitor& visitor);
 
 private:
 	string zooName;
-	vector<Animal> animals;
+	vector<Animal*> animals;
 	vector<Worker> workers;
 	vector<Visitor> visitors;
 };

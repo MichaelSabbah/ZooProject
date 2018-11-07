@@ -27,5 +27,5 @@ void RegularWorker::setExperiance(int experiance)
 
 void RegularWorker::clearAnimalCage(Animal& animal) const
 {
-	cout << "The cage of " << animal.getName << " has cleaned." << endl;
+	cout << "The cage of " << animal.getName() << " has cleaned." << endl;
 }

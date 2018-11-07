@@ -17,6 +17,7 @@ public:
 	virtual void action() const;
 	virtual void eat() const;
 	virtual Animal* createBaby() const;
+	virtual void toOs(ostream& os) const override;
 
 	void climbOnTree()const;
 private:

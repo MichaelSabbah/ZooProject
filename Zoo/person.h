@@ -18,6 +18,7 @@ public:
 	virtual void feedAnimal(Animal& animal) const = 0;
 
 	const Person& operator=(const Person& other);
+	virtual bool operator==(const Person& other) const;
 
 private:
 	int id;

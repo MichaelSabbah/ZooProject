@@ -40,3 +40,8 @@ const Person & Person::operator=(const Person & other)
 {
 	return *this;
 }
+
+bool Person::operator==(const Person& other) const
+{
+	return this == &other;
+}

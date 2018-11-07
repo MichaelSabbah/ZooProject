@@ -1,9 +1,15 @@
-﻿  worker.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  zoo.cpp
+﻿  zoo.cpp
+  zebra.cpp
+  worker.cpp
+  visitor.cpp
+  utils.cpp
   regularWorker.cpp
+  person.cpp
+  monkey.cpp
   manager.cpp
   Main.cpp
+  lion.cpp
+  animal.cpp
+  Generating Code...
   Zoo.vcxproj -> C:\Users\USER\Desktop\studies\ThirdYear\semester c\C++\FinalProject\Part3_ZOO\Zoo\Debug\Zoo.exe
   Zoo.vcxproj -> C:\Users\USER\Desktop\studies\ThirdYear\semester c\C++\FinalProject\Part3_ZOO\Zoo\Debug\Zoo.pdb (Full PDB)

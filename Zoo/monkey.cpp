@@ -38,3 +38,8 @@ Animal* Monkey::createBaby() const
 {
 	return new Monkey();
 }
+
+void Monkey::toOs(ostream& os) const
+{
+	cout << ", climbing speed: " << climbingSpeed << endl;
+}

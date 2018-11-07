@@ -23,12 +23,12 @@ const Zoo & Zoo::operator=(const Zoo & other)
 
 bool Zoo::operator==(const Zoo & other) const
 {
-	return false;
+	return this->animals.size() == other.animals.size();
 }
 
 bool Zoo::operator>(const Zoo & other) const
 {
-	return false;
+	return this->animals.size() > other.animals.size();
 }
 
 int Zoo::workersSalaries() const
@@ -48,17 +48,17 @@ void Zoo::feedByVisitors() const
 {
 }
 
-void Zoo::addAnimal(const Animal& animal)
+void Zoo::addAnimal(Animal* animal)
 {
-	if (find(animals.begin, animals.end, animal) != animals.end)
+	if (find(animals.begin(), animals.end(), animal) != animals.end())
 		this->animals.push_back(animal);
 	else
-		cout << animal.getName() << " is already in the zoo." << endl;
+		cout << animal->getName() << " is already in the zoo." << endl;
 }
 
 void Zoo::addWorker(const Worker& worker)
 {
-	if (find(workers.begin, workers.end, worker) != workers.end)
+	if (find(workers.begin(), workers.end(), worker) != workers.end())
 		this->workers.push_back(worker);
 	else
 		cout << "This worker is already work at the zoo." << endl;
@@ -66,7 +66,7 @@ void Zoo::addWorker(const Worker& worker)
 
 void Zoo::addVisitor(const Visitor& visitor)
 {
-	if (find(visitors.begin, visitors.end, visitor) != visitors.end)
+	if (find(visitors.begin(), visitors.end(), visitor) != visitors.end())
 		this->visitors.push_back(visitor);
 	else
 		cout << "This visitor is already entered to the zoo." << endl;

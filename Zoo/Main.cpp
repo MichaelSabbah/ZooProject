@@ -3,9 +3,25 @@
 #include "monkey.h"
 #include "manager.h"
 #include "zoo.h"
+#include "utils.h"
+
+#include <vector>
+using namespace std;
+
+template <class objectType>
+void printVectorOfPointers(vector<objectType> objects)
+{
+	vector<objectType>::iterator it = objects.begin();
+	for (; it != objects.end(); ++it)
+	{
+		cout << *(*it) << endl;
+		cout << "\n" << endl;
+	}
+}
+
 void main()
 {
-	Animal* animalsCpipya;
+	/*Animal* animalsCpipya;
 	Zoo cpipya("Cpipya");
 	Zoo javayia("Javayia");
 
@@ -69,6 +85,13 @@ void main()
 	cout << cpipya << endl;
 
 	Worker w1(100, "Moshe", 1000);
-	Worker w2(200, "Dani", 2000);
+	Worker w2(200, "Dani", 2000);*/
 
+	vector<Animal*> animals;
+	Monkey m("Dani",false,1);
+	Monkey m1("Yossi", false, 2);
+	animals.push_back(&m);
+	animals.push_back(&m1);
+	Utils::printVectorOfPointers(animals);
 }
+

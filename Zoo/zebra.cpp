@@ -1,6 +1,6 @@
 #include "zebra.h"
 
-Zebra::Zebra(string name, bool isHungry, int numOfStrips=0):Animal(name,isHungry)
+Zebra::Zebra(string name, bool isHungry, int numOfStrips):Animal(name,isHungry)
 {
 	this->numOfStrips = numOfStrips;
 }
