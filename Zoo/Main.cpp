@@ -8,17 +8,6 @@
 #include <vector>
 using namespace std;
 
-template <class objectType>
-void printVectorOfPointers(vector<objectType> objects)
-{
-	vector<objectType>::iterator it = objects.begin();
-	for (; it != objects.end(); ++it)
-	{
-		cout << *(*it) << endl;
-		cout << "\n" << endl;
-	}
-}
-
 void main()
 {
 	/*Animal* animalsCpipya;
