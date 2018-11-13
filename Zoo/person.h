@@ -15,10 +15,12 @@ public:
 	void setName(string name);
 	int getId() const;
 	void setId(	int id);
-	virtual void feedAnimal(Animal& animal) const = 0;
+	virtual void feedAnimal(Animal* animal) const = 0;
 
 	const Person& operator=(const Person& other);
 	virtual bool operator==(const Person& other) const;
+	friend ostream& operator<<(ostream& os, const Person& person);
+	virtual void toOs(ostream& os) const;
 
 private:
 	int id;

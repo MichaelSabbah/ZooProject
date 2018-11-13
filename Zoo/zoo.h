@@ -14,7 +14,7 @@ using namespace std;
 class Zoo
 {
 public:
-	Zoo(string zooName, vector<Animal> animals, vector<Worker> workers, vector<Visitor> visitors);
+	Zoo(string zooName, vector<Animal*> animals, vector<Worker*> workers, vector<Visitor*> visitors);
 	Zoo(string zooName);
 
 	Zoo(const Zoo& other);
@@ -31,12 +31,12 @@ public:
 	void feedByWorkers() const;
 	void feedByVisitors() const;
 	void addAnimal(Animal* animal);
-	void addWorker(const Worker& worker);
-	void addVisitor(const Visitor& visitor);
+	void addWorker(Worker* worker);
+	void addVisitor(Visitor* visitor);
 
 private:
 	string zooName;
 	vector<Animal*> animals;
-	vector<Worker> workers;
-	vector<Visitor> visitors;
+	vector<Worker*> workers;
+	vector<Visitor*> visitors;
 };

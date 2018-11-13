@@ -34,7 +34,27 @@ void Zebra::cleanStrips() const
 	cout << getName() << " is cleaning his stripes..." << endl;
 }
 
-Animal* Zebra::createBaby() const
+Animal* Zebra::operator+(const Animal& other) const
 {
-	return new Zebra();
+	Animal* babyAnimal = nullptr;
+	if (typeid(*this) != typeid(other)) {
+		cout << "This can't be happen!" << endl;
+	}
+	else {
+		babyAnimal = new Zebra();
+		cout << "Zebra baby is born" << endl;
+	}
+	return babyAnimal;
+}
+
+void Zebra::toOs(ostream& os) const
+{
+	os << ", Number of stripes: " << numOfStrips;
+}
+
+const Animal& Zebra::operator=(const Animal& other)
+{
+	Animal::operator=(other);
+	this->numOfStrips = dynamic_cast<Zebra*>((const_cast<Animal*>(&other)))->numOfStrips;
+	return *this;
 }

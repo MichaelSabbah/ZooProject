@@ -17,6 +17,9 @@ public:
 	void setExperiance(int experiance);
 	
 	void clearAnimalCage(Animal& animal) const;
+
+	void workerToOs(ostream& os) const;
+
 private:
 	int experiance;
 };

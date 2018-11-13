@@ -166,7 +166,6 @@
     <ClCompile Include="monkey.cpp" />
     <ClCompile Include="person.cpp" />
     <ClCompile Include="regularWorker.cpp" />
-    <ClCompile Include="utils.cpp" />
     <ClCompile Include="visitor.cpp" />
     <ClCompile Include="worker.cpp" />
     <ClCompile Include="zebra.cpp" />

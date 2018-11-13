@@ -29,3 +29,8 @@ void RegularWorker::clearAnimalCage(Animal& animal) const
 {
 	cout << "The cage of " << animal.getName() << " has cleaned." << endl;
 }
+
+void RegularWorker::workerToOs(ostream& os) const
+{
+	os << ", Experience: " << experiance;
+}

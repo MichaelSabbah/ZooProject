@@ -19,19 +19,25 @@ void Worker::setSalary(int salary)
 	this->salary = salary;
 }
 
-void Worker::feedAnimal(Animal& animal) const
+void Worker::feedAnimal(Animal* animal) const
 {
-	if (animal.getIsHungry()) {
-		animal.eat();
-		cout << "The animal " << animal.getName() << " has feeded." << endl;
-		animal.setIsHungry(false);
+	if (animal->getIsHungry()) {
+		animal->eat();
+		cout << "The animal " << animal->getName() << " has feeded." << endl;
+		animal->setIsHungry(false);
 	}
 	else {
-		cout << "The animal " << animal.getName() << " is not hungry." << endl;
+		cout << "The animal " << animal->getName() << " is not hungry." << endl;
 	}
 }
 
-int Worker::operator+(const Worker & other)
+int Worker::operator+(const Worker& other)
 {
 	return (this->salary + other.salary);
+}
+
+void Worker::toOs(ostream& os) const
+{
+	os << " - " << (typeid(*this).name() + 6) << " - " << "Salary: " << salary;
+	this->workerToOs(os);
 }

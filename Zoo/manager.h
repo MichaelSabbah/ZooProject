@@ -17,7 +17,8 @@ public:
 	~Manager();
 
 	const Manager& operator=(const Manager& other);
-
+	void workerToOs(ostream& os) const;
+	
 	void hireNewWorker(const Worker& worker);
 private:
 	vector<Worker> subordinates;

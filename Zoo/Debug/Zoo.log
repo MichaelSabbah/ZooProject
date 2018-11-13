@@ -1,15 +1,4 @@
-﻿  zoo.cpp
-  zebra.cpp
-  worker.cpp
-  visitor.cpp
-  utils.cpp
-  regularWorker.cpp
-  person.cpp
-  monkey.cpp
-  manager.cpp
-  Main.cpp
-  lion.cpp
-  animal.cpp
-  Generating Code...
+﻿  Main.cpp
+c:\users\user\desktop\studies\thirdyear\semester c\c++\finalproject\part3_zoo\zoo\zoo\main.cpp(14): warning C4101: 'animalsCpipya': unreferenced local variable
   Zoo.vcxproj -> C:\Users\USER\Desktop\studies\ThirdYear\semester c\C++\FinalProject\Part3_ZOO\Zoo\Debug\Zoo.exe
   Zoo.vcxproj -> C:\Users\USER\Desktop\studies\ThirdYear\semester c\C++\FinalProject\Part3_ZOO\Zoo\Debug\Zoo.pdb (Full PDB)

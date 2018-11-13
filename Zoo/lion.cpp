@@ -34,7 +34,28 @@ void Lion::nourishMane() const
 	cout << getName() << " is nourish his mane..." << endl;
 }
 
-Animal* Lion::createBaby() const
+Animal* Lion::operator+(const Animal& other) const
 {
-	return new Lion();
+	Animal* babyAnimal = nullptr;
+	if (typeid(*this) != typeid(other)) {
+		cout << "This can't be happen!" << endl;
+	}
+	else {
+		babyAnimal = new Lion();
+		cout << "Lion baby is born" << endl;
+	}
+	return babyAnimal;
+}
+
+void Lion::toOs(ostream& os) const
+{
+	if (isGroupLeader)
+		os << ", group leader";
+}
+
+const Animal& Lion::operator=(const Animal& other)
+{
+	Animal::operator=(other);
+	this->isGroupLeader = dynamic_cast<Lion*>((const_cast<Animal*>(&other)))->isGroupLeader;
+	return *this;
 }

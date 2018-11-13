@@ -36,12 +36,24 @@ void Person::setId(int id)
 	this->id = id;
 }
 
-const Person & Person::operator=(const Person & other)
+const Person & Person::operator=(const Person& other)
 {
+	this->id = other.id;
+	this->name = other.name;
 	return *this;
 }
 
 bool Person::operator==(const Person& other) const
 {
-	return this == &other;
+	return this->id == other.id;
 }
+
+ostream& operator<<(ostream& os, const Person& person) 
+{
+	os << "Id: " << person.getId() << ", Name: " << person.getName();
+	person.toOs(os);
+	os << endl;
+	return os;
+}
+
+void Person::toOs(ostream& os) const{}

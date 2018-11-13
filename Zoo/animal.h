@@ -18,13 +18,12 @@ public:
 
 	virtual void action() const = 0;
 	virtual void eat() const = 0;	
-	virtual Animal* createBaby() const = 0;
 
-	const Animal& operator=(const Animal& other);
-	Animal* operator+(const Animal& other) const;
-	virtual bool operator==(const Animal& other) const;
-	virtual void toOs(ostream& os) const;
+	virtual const Animal& operator=(const Animal& other);
+	virtual Animal* operator+(const Animal& other) const = 0;
+
 	friend ostream& operator<<(ostream& os, const Animal& animal);
+	virtual void toOs(ostream& os) const;
 
 private:
 	string name;

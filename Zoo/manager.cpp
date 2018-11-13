@@ -18,17 +18,22 @@ Manager::~Manager()
 {
 }
 
-const Manager & Manager::operator=(const Manager & other)
+const Manager& Manager::operator=(const Manager & other)
 {
+	Worker::operator=(other);
+	this->subordinates = other.subordinates;
 	return *this;
 }
 
 void Manager::hireNewWorker(const Worker& worker)
 {
-	if (find(subordinates.begin(), subordinates.end(), worker) != subordinates.end())
+	if (find(subordinates.begin(), subordinates.end(), worker) == subordinates.end())
 		this->subordinates.push_back(worker);
 	else
-		cout << "You already hired this worker.";
+		cout << "You already hired this worker." << endl;
 }
 
-
+void Manager::workerToOs(ostream& os) const
+{
+	os << ", Number of workers: " << subordinates.size();
+}

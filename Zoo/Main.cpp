@@ -5,82 +5,75 @@
 #include "zoo.h"
 #include "utils.h"
 
+#include <ctime>
 #include <vector>
 using namespace std;
 
 void main()
 {
-	/*Animal* animalsCpipya;
-	Zoo cpipya("Cpipya");
-	Zoo javayia("Javayia");
+	Animal* animalsCpipya;
+	Zoo* cpipya = new Zoo("Cpipya");
+	Zoo* javayia = new Zoo("Javayia");
 
-	Zebra z1("hedva", false, 400);
-	Lion l1("simba", true, true);
-	Monkey m1("miko", true, 30);
-	Monkey m2("miki", true, 24);
+	Zebra* z1 = new Zebra("hedva", false, 400);
+	Lion* l1 = new Lion("simba", true, true);
+	Monkey* m1 = new Monkey("miko", true, 30);
+	Monkey* m2 = new Monkey("miki", true, 24);
 
-	cpipya.addAnimal(z1);
-	cpipya.addAnimal(l1);
-	cpipya.addAnimal(m1);
-	cpipya.addAnimal(m2);
+	cpipya->addAnimal(z1);
+	cpipya->addAnimal(l1);
+	cpipya->addAnimal(m1);
+	cpipya->addAnimal(m2);
 
-	javayia.addAnimal(Zebra("rivka", true, 200));
-	javayia.addAnimal(Lion("nala", true, true));
+	javayia->addAnimal(new Zebra("rivka", true, 200));
+	javayia->addAnimal(new Lion("nala", true, true));
 
 	Worker* moti = new RegularWorker(2, "moti", 11, 1);
-	cpipya.addWorker(*moti);
+	cpipya->addWorker(moti);
 	Manager* haim = new Manager(1, "haim", 20);
-	cpipya.addWorker(*haim);
+	cpipya->addWorker(haim);
 	haim->hireNewWorker(*moti);
 
 	Worker* barak = new RegularWorker(1, "barak", 9, 2);
-	javayia.addWorker(*barak);
+	javayia->addWorker(barak);
 	Manager* yossi = new Manager(2, "yossi", 20);
-	javayia.addWorker(*yossi);
+	javayia->addWorker(yossi);
 	yossi->hireNewWorker(*barak);
 
-	Visitor* v1 = new Visitor(1, "inbar", 9);
-	Visitor* v2 = new Visitor(2, "bob", 10);
+	Visitor* v1 = new Visitor(1, "inbar", time(0));
+	Visitor* v2 = new Visitor(2, "bob", time(0));
 
-	cpipya.addVisitor(*v1);
-	javayia.addVisitor(*v2);
+	cpipya->addVisitor(v1);
+	javayia->addVisitor(v2);
 
-	cpipya.feedByWorkers();
+	cpipya->feedByWorkers();
 
 	v1->feedAnimal(m1);
 
-	cpipya.animalsAction();
+	cpipya->animalsAction();
 
 	Worker* rookie = new RegularWorker(4, "rookie", 4, 0);
-	cpipya.addWorker(*rookie);
+	cpipya->addWorker(rookie);
 	haim->hireNewWorker(*rookie);
 
 	if (cpipya == javayia)
 	{
-		cout << "Same Amount of Animals";
+		cout << "Same Amount of Animals" << endl;
 	}
 	else if (cpipya > javayia)
 	{
-		cout << "Cpipya has More Animals";
+		cout << "Cpipya has More Animals" << endl;
 
 	}
 	else
 	{
-		cout << "Javayia has More Animals";
+		cout << "Javayia has More Animals" << endl;
 
 	}
-	cpipya.addAnimal(*(m1 + m2));
+	cpipya->addAnimal((*m1 + *m2));
 
-	cout << cpipya << endl;
+	cout << endl;
 
-	Worker w1(100, "Moshe", 1000);
-	Worker w2(200, "Dani", 2000);*/
-
-	vector<Animal*> animals;
-	Monkey m("Dani",false,1);
-	Monkey m1("Yossi", false, 2);
-	animals.push_back(&m);
-	animals.push_back(&m1);
-	Utils::printVectorOfPointers(animals);
+	cout << *cpipya << endl;
 }
 

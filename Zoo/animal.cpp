@@ -41,34 +41,21 @@ void Animal::toOs(ostream& os) const
 	//Empty, used for polymorphism
 }
 
-const Animal & Animal::operator=(const Animal & other)
+const Animal& Animal::operator=(const Animal & other)
 {
+	this->name = other.name;
+	this->isHungry = other.isHungry;
 	return *this;
 }
-
-Animal* Animal::operator+(const Animal & other) const
-{
-	Animal* babyAnimal = nullptr;
-	if (typeid(this) != typeid(other)) {
-		cout << "This can't be happen!" << endl;
-	}
-	else {
-		babyAnimal = this->createBaby();
-		cout << "Baby born" << endl;
-	}
-	return babyAnimal;
-}
-
 ostream& operator<<(ostream& os, const Animal& animal)
 {
-	os << "name: " << animal.name;
+	string hungry = "hungry";
+	if (!animal.isHungry)
+		hungry = "not" + hungry;
+
+	os << "(" << (typeid(animal).name() + 6) << ") " << "name: " << animal.name << ", is " << hungry;
 	animal.toOs(os);
+	os << endl;
 	return os;
 }
-
-bool Animal::operator==(const Animal& other) const
-{
-	return false;
-}
-
 

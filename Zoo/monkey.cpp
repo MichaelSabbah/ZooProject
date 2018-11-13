@@ -34,12 +34,27 @@ void Monkey::climbOnTree() const
 	cout << getName() << " is climbing on the tree..." << endl;
 }
 
-Animal* Monkey::createBaby() const
+Animal* Monkey::operator+(const Animal& other) const
 {
-	return new Monkey();
+	Animal* babyAnimal = nullptr;
+	if (typeid(*this) != typeid(other)) {
+		cout << "This can't be happen!" << endl;
+	}
+	else {
+		babyAnimal = new Monkey();
+		cout << "Monkey baby is born" << endl;
+	}
+	return babyAnimal;
 }
 
 void Monkey::toOs(ostream& os) const
 {
-	cout << ", climbing speed: " << climbingSpeed << endl;
+	cout << ", climbing speed: " << climbingSpeed;
+}
+
+const Animal& Monkey::operator=(const Animal& other)
+{
+	Animal::operator=(other);
+	this->climbingSpeed = dynamic_cast<Monkey*>((const_cast<Animal*>(&other)))->climbingSpeed;
+	return *this;
 }
